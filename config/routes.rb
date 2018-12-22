@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: {
+    registrations: 'registrations'
+  }
   #todo wont need all routes for oitems and carts
   resources :products
   resources :oitems
