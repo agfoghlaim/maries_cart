@@ -1,5 +1,6 @@
 class Cart < ApplicationRecord
   has_many :oitems, dependent: :destroy
+  belongs_to :user, optional: true
 
   def add_product(product, weight)
     puts "have product #{product.id} and weight: #{weight}"
