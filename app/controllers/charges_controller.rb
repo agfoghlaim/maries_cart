@@ -3,6 +3,8 @@ class ChargesController < ApplicationController
  
 
   def new
+    #will need access to cart total
+   
   end
   
   def create
