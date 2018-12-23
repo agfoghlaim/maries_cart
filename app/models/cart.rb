@@ -28,17 +28,13 @@ class Cart < ApplicationRecord
 
     
   def set_cart_total(oitems)
-    #puts "\n\n\n\n\n\n have ii"
     cart_total = 0
-    #puts "\n\n\n\n\t\t  have oitems ?  #{oitems}"
 
     oitems.each do |i|
       cart_total += i.total
-      puts "\n\n\n\n\t\ #{i}, #{i.total}"
     end
+    
     self[:cart_total] = cart_total
-    puts "\n\n\n\n\t\  #{cart_total}"
-    #return cart_total
   end
 
   

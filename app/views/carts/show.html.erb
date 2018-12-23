@@ -8,5 +8,8 @@ Item Total:<%= number_to_currency(i.total) %>
 </p>
 <%= link_to  "remove item", i, method: :delete %>
 <%= link_to  "paynow", new_charge_path %>
+
 <% end %>
+
+<%= button_to "eetopay", associate_user_with_cart_path(:id => @cart.id) %>
 

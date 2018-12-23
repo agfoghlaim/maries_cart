@@ -3,13 +3,16 @@ class ChargesController < ApplicationController
  
 
   def new
-    #will need access to cart total
-   
+    #will need a display amt and an amt in cents
+    #will need access to cart total, use helper in application ctrl
+    @amount = (current_cart.cart_total*100).to_i
+    
   end
   
   def create
     # Amount in cents
-    @amount = 500
+    @amount = (current_cart.cart_total*100).to_i
+    puts "amt is : #{@amount} and: #{@cart}"
   
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
